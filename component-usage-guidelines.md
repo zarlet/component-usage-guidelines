@@ -44,6 +44,29 @@ Variants: Primary (solid brand background), Secondary (outline), Icon button (ic
 - A destructive action without a confirmation step (e.g. a Modal) — if the design
   system has no danger button variant, flag the gap instead of improvising one
 
+## Text Field
+**What it is:** A single-line free-text input.
+**Use when:**
+- The input is unique or unpredictable — it can't be offered as a preset list
+  (names, titles, free-form values)
+- The data is memorable and typed faster free-hand than picked from a control
+  (email, phone, URL, password)
+- Picking one item from a very large set (hundreds+), paired with type-ahead
+  autocomplete — a Dropdown/Select would be unusably long
+**Don't use when:**
+- The input spans multiple lines → use Textarea
+- Valid answers are a small, known set → use Dropdown/Select or Radio — free text
+  invites typos and unparseable data
+- Finding or filtering existing content → use Search Box
+- Entering dates or times → use a date/time picker; if the design system has
+  none, flag the gap instead of improvising
+**Anti-patterns:**
+- Placeholder as the only label — it disappears on input; every field needs a
+  visible, persistent label
+- Formatted input without a format hint (helper text, e.g. "DD/MM/YYYY") —
+  surface the expected format before the error, not after
+- Relying on the input type alone for validation — always validate explicitly
+
 ---
 
 # Navigation
