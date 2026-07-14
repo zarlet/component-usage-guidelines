@@ -70,6 +70,23 @@ Variants: Primary (solid brand background), Secondary (outline), Icon button (ic
   surface the expected format before the error, not after
 - Relying on the input type alone for validation — always validate explicitly
 
+## Textarea
+**What it is:** A multi-line free-text input.
+**Use when:**
+- Expected input is more than a few words and may span multiple lines —
+  comments, descriptions, notes
+**Don't use when:**
+- The answer fits on one line → use Text Field
+- Rich formatting (bold, lists, headings) is required → use a rich text editor;
+  if the design system has none, flag the gap instead of improvising
+**Anti-patterns:**
+- A fixed, tiny height for content expected to be long — size the field to the
+  expected input, or let it auto-grow with content
+- A character limit without a visible counter — if input is limited, show
+  remaining characters
+- Neither a label nor a placeholder — same labeling rule as Text Field (prefer
+  a persistent label; placeholder as the minimum)
+
 ---
 
 # Navigation
