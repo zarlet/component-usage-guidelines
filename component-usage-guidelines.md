@@ -61,8 +61,11 @@ Variants: Primary (solid brand background), Secondary (outline), Icon button (ic
 - Entering dates or times → use a date/time picker; if the design system has
   none, flag the gap instead of improvising
 **Anti-patterns:**
-- Placeholder as the only label — it disappears on input; every field needs a
-  visible, persistent label
+- A field with neither a label nor a placeholder — the user has to guess what to
+  enter. In most cases prefer a persistent, visible label; when the layout
+  genuinely can't fit one (compact toolbars, search patterns), a placeholder is
+  the minimum — pair it with an accessible label (`aria-label`), since
+  placeholders disappear on input
 - Formatted input without a format hint (helper text, e.g. "DD/MM/YYYY") —
   surface the expected format before the error, not after
 - Relying on the input type alone for validation — always validate explicitly
