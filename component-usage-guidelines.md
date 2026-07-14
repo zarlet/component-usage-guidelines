@@ -102,6 +102,9 @@ displays the current selection.
   Toggle (binary + instant)
 - All options should be visible without any interaction → use Radio
 - The set is very large (hundreds+) → use Text Field with type-ahead autocomplete
+- In a form, when the selection triggers follow-on changes (revealing fields,
+  altering later options) → use Radio or Toggle — visible options make the
+  consequences of choosing predictable
 - Switching views of the same content → use Segmented Control
 - Navigating between pages → use Tabs, Sidebar, or links
 **Anti-patterns:**
@@ -110,6 +113,36 @@ displays the current selection.
   closed state must display the current selection, not the original label
 - No preselected default when a clear common choice exists — make the frequent
   case zero-click
+
+## Radio
+**What it is:** A visible group of mutually exclusive options — selecting one
+deselects the previous. The choice typically takes effect on form submit.
+**Use when:**
+- A small set of mutually exclusive options (typically 2–5)
+- The options are important enough to occupy screen space — the user should see
+  and compare all of them instantly, with equal emphasis (this is the trade
+  against Select Menu, which hides options behind a click)
+- The choice is deferred — applied on submit, not instantly
+**Placement:**
+- Stack options vertically where possible — label lengths vary by language, and
+  horizontal groups are harder to scan
+- Order options logically (lowest→highest risk, most→least likely); avoid
+  alphabetical order — it breaks under localization
+- Separate adjacent radio groups with group labels and spacing, or users can't
+  tell which option belongs to which group
+**Don't use when:**
+- Multiple selections are allowed → use Checkbox
+- More than ~5 options, or options of secondary importance → use Select Menu
+- A binary choice with instant effect → use Toggle
+- Instant switching between views of the same content → use Segmented Control
+**Anti-patterns:**
+- A single radio button by itself — it can never be unchecked; use a Checkbox
+  for a lone opt-in
+- No default selection — preselect the safest or most likely option. Exception:
+  when preselection would bias a sensitive or consequential answer (e.g. gender),
+  leave all unselected and validate on submit instead
+- No "None" option when opting out is a valid answer — a radio group offers no
+  way to deselect entirely
 
 ---
 
