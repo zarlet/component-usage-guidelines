@@ -37,7 +37,7 @@ Variants: Primary (solid brand background), Secondary (outline), Icon button (ic
 **Don't use when:**
 - Navigating to another page or object → use a text link, Tabs, or Sidebar
 - Toggling a persistent on/off state → use Toggle
-- Choosing among options → use Radio, Checkbox, or Dropdown/Select
+- Choosing among options → use Radio, Checkbox, or Select Menu
 **Anti-patterns:**
 - More than one Primary button per screen — demote the rest to Secondary
 - Icon button without an accessible label (`aria-label`); non-obvious icons also need a Tooltip
@@ -52,10 +52,10 @@ Variants: Primary (solid brand background), Secondary (outline), Icon button (ic
 - The data is memorable and typed faster free-hand than picked from a control
   (email, phone, URL, password)
 - Picking one item from a very large set (hundreds+), paired with type-ahead
-  autocomplete — a Dropdown/Select would be unusably long
+  autocomplete — a Select Menu would be unusably long
 **Don't use when:**
 - The input spans multiple lines → use Textarea
-- Valid answers are a small, known set → use Dropdown/Select or Radio — free text
+- Valid answers are a small, known set → use Select Menu or Radio — free text
   invites typos and unparseable data
 - Finding or filtering existing content → use Search Box
 - Entering dates or times → use a date/time picker; if the design system has
@@ -86,6 +86,30 @@ Variants: Primary (solid brand background), Secondary (outline), Icon button (ic
   remaining characters
 - Neither a label nor a placeholder — same labeling rule as Text Field (prefer
   a persistent label; placeholder as the minimum)
+
+## Select Menu
+**What it is:** A collapsed list that expands on demand to let the user pick one
+option (or several, in the multi-select variant). The closed trigger always
+displays the current selection.
+**Use when:**
+- Picking one option from a short list — roughly 4–12 items
+- The options are of secondary importance and don't need to be visible until the
+  user interacts — this is the key trade against Radio, which shows everything
+- Space is constrained and a sensible default can be preselected
+- Multi-select variant: choosing several options from such a list in compact space
+**Don't use when:**
+- Only 2–3 options that benefit from visibility → use Radio (on submit) or
+  Toggle (binary + instant)
+- All options should be visible without any interaction → use Radio
+- The set is very large (hundreds+) → use Text Field with type-ahead autocomplete
+- Switching views of the same content → use Segmented Control
+- Navigating between pages → use Tabs, Sidebar, or links
+**Anti-patterns:**
+- A select menu for 2 options — a Toggle or Radio pair is one click cheaper
+- A trigger that doesn't update to show what is selected — after choosing, the
+  closed state must display the current selection, not the original label
+- No preselected default when a clear common choice exists — make the frequent
+  case zero-click
 
 ---
 
