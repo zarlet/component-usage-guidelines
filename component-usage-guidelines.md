@@ -196,6 +196,27 @@ effect immediately.
 - A label describing an action rather than a state — the label must say what IS,
   so the switch position reads unambiguously
 
+## Search Box
+**What it is:** A text input, marked with a magnifying-glass icon, for finding or
+filtering existing content by keyword.
+**Use when:**
+- Finding items in a data set too large or complex to scan
+- Filtering down visible content — works at three levels: a component (e.g. a
+  Table), a page, or the whole product (global)
+- Live search (filter-as-you-type, debounced) when results can update instantly;
+  manual search (Enter key or button) when querying is expensive
+**Don't use when:**
+- The data set is small and fully visible — scanning is faster than typing
+- Collecting structured form data → use Text Field
+- Choosing from a set of predefined options → use Select Menu (searchable, if long)
+**Anti-patterns:**
+- No clear (×) affordance once text is entered — users need a one-click reset
+  back to the unfiltered view
+- Search as the only path to content that also deserves browsable structure
+  (navigation, filters) — search complements browsing, it doesn't replace it
+- Omitting the magnifying-glass icon — it's the universal signal that separates
+  a search box from a plain Text Field
+
 ---
 
 # Navigation
