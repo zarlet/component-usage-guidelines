@@ -51,8 +51,6 @@ Variants: Primary (solid brand background), Secondary (outline), Icon button (ic
   (names, titles, free-form values)
 - The data is memorable and typed faster free-hand than picked from a control
   (email, phone, URL, password)
-- Picking one item from a very large set (hundreds+), paired with type-ahead
-  autocomplete — a Select Menu would be unusably long
 **Don't use when:**
 - The input spans multiple lines → use Textarea
 - Valid answers are a small, known set → use Select Menu or Radio — free text
@@ -97,11 +95,12 @@ displays the current selection.
   user interacts — this is the key trade against Radio, which shows everything
 - Space is constrained and a sensible default can be preselected
 - Multi-select variant: choosing several options from such a list in compact space
+- Large lists: keep using Select Menu, but add type-ahead filtering inside the
+  menu (searchable select) instead of a plain scroll list
 **Don't use when:**
 - Only 2–3 options that benefit from visibility → use Radio (on submit) or
   Toggle (binary + instant)
 - All options should be visible without any interaction → use Radio
-- The set is very large (hundreds+) → use Text Field with type-ahead autocomplete
 - In a form, when the selection triggers follow-on changes (revealing fields,
   altering later options) → use Radio or Toggle — visible options make the
   consequences of choosing predictable
