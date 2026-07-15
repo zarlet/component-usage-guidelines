@@ -90,7 +90,7 @@ Variants: Primary (solid brand background), Secondary (outline), Icon button (ic
 option (or several, in the multi-select variant). The closed trigger always
 displays the current selection.
 **Use when:**
-- Picking one option from a short list — roughly 4–12 items
+- Picking one option from a list of roughly 4 or more items
 - The options are of secondary importance and don't need to be visible until the
   user interacts — this is the key trade against Radio, which shows everything
 - Space is constrained and a sensible default can be preselected
@@ -104,8 +104,8 @@ displays the current selection.
 - In a form, when the selection triggers follow-on changes (revealing fields,
   altering later options) → use Radio or Toggle — visible options make the
   consequences of choosing predictable
-- Switching views of the same content → use Segmented Control
-- Navigating between pages → use Tabs, Sidebar, or links
+- Switching views of the same content, or navigating between pages → use Tabs,
+  Sidebar, or links
 **Anti-patterns:**
 - A select menu for 2 options — a Toggle or Radio pair is one click cheaper
 - A trigger that doesn't update to show what is selected — after choosing, the
@@ -133,7 +133,7 @@ deselects the previous. The choice typically takes effect on form submit.
 - Multiple selections are allowed → use Checkbox
 - More than ~5 options, or options of secondary importance → use Select Menu
 - A binary choice with instant effect → use Toggle
-- Instant switching between views of the same content → use Segmented Control
+- Instant switching between views of the same content → use Tabs
 **Anti-patterns:**
 - A single radio button by itself — it can never be unchecked; use a Checkbox
   for a lone opt-in
@@ -184,8 +184,8 @@ effect immediately.
 - The change requires a submit/save or further steps to take effect → use Checkbox
 - The change needs confirmation, or is destructive → use Button with a
   confirmation Modal
-- There are more than two states or options → use Radio, Segmented Control, or
-  Select Menu
+- There are more than two states or options → use Radio or Select Menu (or Tabs,
+  when switching views)
 - It's unclear whether the control shows a state or performs an action → use
   Checkbox
 **Anti-patterns:**
@@ -216,6 +216,25 @@ filtering existing content by keyword.
   (navigation, filters) — search complements browsing, it doesn't replace it
 - Omitting the magnifying-glass icon — it's the universal signal that separates
   a search box from a plain Text Field
+
+### Choosing between selection inputs
+
+| Dimension          | Radio                | Checkbox         | Toggle                   | Select Menu                      | Tabs                       |
+|--------------------|----------------------|------------------|--------------------------|----------------------------------|----------------------------|
+| Options visible    | All                  | All              | 2 (implicit)             | Collapsed until clicked          | All                        |
+| Selections         | Exactly one          | Any number       | One of two               | One (multi-select variant: many) | One                        |
+| Effect timing      | On submit            | On submit        | Instant                  | Varies by context                | Instant                    |
+| Option count       | 2–5                  | Any visible list | 2                        | 4+ (searchable when long)        | 2–5                        |
+| Option importance  | Primary — worth the screen space | Primary | State must be glanceable | Secondary — hidden until needed  | Views/sections of content  |
+| Follow-on form changes | Good fit         | Good fit         | Good fit                 | Avoid — consequences are hidden  | — (not a form control)     |
+
+**Rule of thumb:**
+Instant + binary → Toggle. Instant + switching views or sections → Tabs.
+Deferred + exactly one of a few → Radio. Deferred + any number → Checkbox.
+One of many, options secondary → Select Menu (searchable when long).
+If the selection reveals or changes later form fields → Radio, Checkbox, or
+Toggle — their visible options make the consequences predictable; avoid
+Select Menu there.
 
 ---
 
