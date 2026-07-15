@@ -172,6 +172,30 @@ checkbox is a lone opt-in; a group is multi-select.
 - A parent checkbox showing plain checked/unchecked while only some children are
   selected — that is exactly what the indeterminate state is for
 
+## Toggle
+**What it is:** A binary switch — on/off, active/inactive — whose change takes
+effect immediately.
+**Use when:**
+- An on/off setting that applies the instant it's flipped, with no submit step
+- The current state must be readable at a glance — a toggle shows mode/state
+  more clearly than a checkbox
+- The change is reversible — flipping back restores the previous behavior
+**Don't use when:**
+- The change requires a submit/save or further steps to take effect → use Checkbox
+- The change needs confirmation, or is destructive → use Button with a
+  confirmation Modal
+- There are more than two states or options → use Radio, Segmented Control, or
+  Select Menu
+- It's unclear whether the control shows a state or performs an action → use
+  Checkbox
+**Anti-patterns:**
+- A Toggle inside a form that ends in a Save button — users can't tell whether
+  the change already happened
+- Text inside the switch itself ("ON"/"OFF") — breaks under localization; put
+  state text next to the toggle instead
+- A label describing an action rather than a state — the label must say what IS,
+  so the switch position reads unambiguously
+
 ---
 
 # Navigation
