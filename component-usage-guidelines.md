@@ -144,6 +144,35 @@ deselects the previous. The choice typically takes effect on form submit.
 - No "None" option when opting out is a valid answer — a radio group offers no
   way to deselect entirely
 
+## Checkbox
+**What it is:** Independent on/off choices — any number can be selected. A single
+checkbox is a lone opt-in; a group is multi-select.
+**Use when:**
+- Selecting any number of options from a visible list, each independent of the
+  others
+- Selecting multiple items in a Table to trigger a batch action on them
+  (select rows → act on the selection)
+- A single, self-explanatory opt-in that takes effect on submit (e.g. "Accept
+  terms and conditions")
+- The options are primary information that should be visible without interaction
+- The change should be reviewed and submitted rather than applied instantly —
+  this protects users from accidental changes
+- Parent/child selection: a parent checkbox bulk-selects its children; when only
+  some children are checked, the parent shows the indeterminate (mixed) state
+**Placement:**
+- Stack vertically where possible, same as Radio; use a group label for groups
+**Don't use when:**
+- Only one option can be chosen → use Radio (small list) or Select Menu (longer list)
+- Multi-selecting from a long list, or space is constrained → use Select Menu
+  (multi-select variant)
+- A binary setting with instant effect → use Toggle
+**Anti-patterns:**
+- A checkbox that triggers an immediate action on click — checking declares
+  intent for a later submit; instant effects belong to Toggle (batch-action
+  selection in a Table is fine: the action comes from a separate button)
+- A parent checkbox showing plain checked/unchecked while only some children are
+  selected — that is exactly what the indeterminate state is for
+
 ---
 
 # Navigation
