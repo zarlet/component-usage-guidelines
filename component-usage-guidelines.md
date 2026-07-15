@@ -219,22 +219,22 @@ filtering existing content by keyword.
 
 ### Choosing between selection inputs
 
-| Dimension          | Radio                | Checkbox         | Toggle                   | Select Menu                      | Tabs                       |
-|--------------------|----------------------|------------------|--------------------------|----------------------------------|----------------------------|
-| Options visible    | All                  | All              | 2 (implicit)             | Collapsed until clicked          | All                        |
-| Selections         | Exactly one          | Any number       | One of two               | One (multi-select variant: many) | One                        |
-| Effect timing      | On submit            | On submit        | Instant                  | Varies by context                | Instant                    |
-| Option count       | 2–5                  | Any visible list | 2                        | 4+ (searchable when long)        | 2–5                        |
-| Option importance  | Primary — worth the screen space | Primary | State must be glanceable | Secondary — hidden until needed  | Views/sections of content  |
-| Follow-on form changes | Good fit         | Good fit         | Good fit                 | Avoid — consequences are hidden  | — (not a form control)     |
+| Dimension          | Radio                | Checkbox         | Toggle                   | Select Menu                      |
+|--------------------|----------------------|------------------|--------------------------|----------------------------------|
+| Options visible    | All                  | All              | 2 (implicit)             | Collapsed until clicked          |
+| Selections         | Exactly one          | Any number       | One of two               | One (multi-select variant: many) |
+| Effect timing      | On submit            | On submit        | Instant                  | Varies by context                |
+| Option count       | 2–5                  | Any visible list | 2                        | 4+ (searchable when long)        |
+| Option importance  | Primary — worth the screen space | Primary | State must be glanceable | Secondary — hidden until needed  |
+| Follow-on form changes | Good fit         | Good fit         | Good fit                 | Avoid — consequences are hidden  |
 
 **Rule of thumb:**
-Instant + binary → Toggle. Instant + switching views or sections → Tabs.
-Deferred + exactly one of a few → Radio. Deferred + any number → Checkbox.
-One of many, options secondary → Select Menu (searchable when long).
-If the selection reveals or changes later form fields → Radio, Checkbox, or
-Toggle — their visible options make the consequences predictable; avoid
-Select Menu there.
+Instant + binary → Toggle. Deferred + exactly one of a few → Radio.
+Deferred + any number → Checkbox. One of many, options secondary → Select Menu
+(searchable when long). Switching views or sections is navigation, not
+selection → Tabs. If the selection reveals or changes later form fields →
+Radio, Checkbox, or Toggle — their visible options make the consequences
+predictable; avoid Select Menu there.
 
 ---
 
